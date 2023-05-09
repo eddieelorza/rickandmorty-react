@@ -1,0 +1,48 @@
+#root{
+    background: #3d3e44;
+}
+
+
+.title{
+    background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3rem;
+}
+.input-wrapper{
+    background: #2b2b2b;
+    width: 35rem !important;
+    height: 3.5rem;
+    left: 50px;
+   
+   
+    input{
+        background: transparent;
+        color: #fff;
+        &:focus{
+            background: transparent;
+            color: #fff;
+            box-shadow: none;
+        }
+    }
+
+    button{
+        background: transparent;
+        border: 1px solid #fff;
+        height: 3.5rem;
+        transition: .5s, color .10s;
+        -webkit-transition: .5s, color .10s;
+        -moz-transition: .5s, color .10s;
+        &:hover{
+            background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+            border: 1px solid #fff;
+            color: #3f3f3f;
+            transform: translatex(20px);
+            -webkit-transform: translatex(20px);
+            -moz-transform: translatex(20px);
+        }
+    }
+}
+
+
+       

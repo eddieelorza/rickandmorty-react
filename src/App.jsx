@@ -1,53 +1,23 @@
-import { useState, useEffect} from 'react'
-import getCharacterByName from './api/api'
-import CardList from './components/cards/card-list'
-import searchIcon from './assets/akar-icons_search.svg'
+import Home from "./pages/home"
+import CardDetail from "./components/cards/card-detail"
+import {Routes, Route} from "react-router-dom"
+import Navbar from "./components/navbar/navbar"
 import './App.scss'
 function App() {
-  
-  const [character, setCharacter] = useState([])
-  const [search, setSearch] = useState('')
-
-
-  useEffect(() => {
-    getCharacterByName(search)
-      .then(data => {
-        const {results} = data
-        setCharacter(results)
-      })
-      .catch(error => console.log('ocurrio un error', error))
-  }, [search])
-
-   const handleText = (event) =>{
-    setSearch(event.target.value)
-   }
-
-   const searchButton = () =>{
-    getCharacterByName(search)
-    .then(data => {
-      const {results} = data
-      setCharacter(results)
-    })
-    .catch(error => console.log('ocurrio un error', error))
-    }
-
-
-
-  return (
-    <section className="container d-flex flex-column justify-content-center align-items-center">
-        <h1 className="text-center fw-bold title my-2">Rick and Morty</h1>
-       <div className="input-group input-wrapper  rounded-2 align-items-center d-none d-lg-flex my-5" >
-            <div className="input-group-append p-2">
-                <img src={searchIcon} alt=""/>
-            </div>
-            <input type="search"  className="form-control border border-0" placeholder="Search..." onChange={handleText}/>
-            <button className="btn btn-outline-secondary border border-0" type="button" id="button-addon2" onClick={searchButton}>Search</button>
-
-        </div>
-     <CardList character={character}/>
-    
-    </section>
+  return(
+  <main>
+    <Navbar/>
+    <Routes>  
+    {/* Al hacer click en cualquiera de ellos me debe redireccionar a un pagina de detalle , donde vea informacion relevante del personaje */}
+      <Route path="/" element={<Home/>}/>
+      <Route path="/detail" element={<CardDetail/>}>
+        <Route path=":id" element={<CardDetail/>}/>
+      </Route>
+    </Routes>
+  </main>
   )
+  
+  
 }
 
 export default App

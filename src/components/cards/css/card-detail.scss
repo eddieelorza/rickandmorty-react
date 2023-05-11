@@ -1,0 +1,61 @@
+.card-detail_wrapper{
+    display: grid;
+    place-items: center;
+    color:white;
+    margin-top: 5rem;
+    width: 100%;
+   
+    .card-detail_box{
+        width: 100%;
+        background-color: rgb(43, 43, 43);
+        padding: 2rem;
+    }
+}
+
+.avatar-wrapper{
+ 
+    position: relative;
+    .avatar-wrapper_status{
+        position: absolute;
+        overflow: hidden;
+        left: 40%;
+        top: 18rem;
+        width: 5rem;
+        padding: 0.5rem;
+        text-align: center;
+        font-weight: bold;
+        overflow: hidden;
+       
+    }
+    .alive-box{
+        background-color: rgb(147, 253, 77);
+        color: black;
+    }
+
+    .dead-box{
+        background-color: rgb(253, 77, 77);
+        color: white;
+    }
+
+    .avatar-wrapper_img{
+
+        width: 20rem;
+        height: 20rem;
+        border-radius: 50%;
+        background-color: white;
+       
+    }
+    .alive-img{
+        border: 10px solid rgb(147, 253, 77);
+    }
+
+    .dead-img{
+        border: 10px solid rgb(253, 77, 77);
+    }
+
+
+
+   
+}
+
+

@@ -14,6 +14,7 @@ const cardList = ({character}) =>{
                         location={item.location}
                         origin={item.origin}
                         image={item.image}
+                        item={item}
                     /> 
 
                   ))

@@ -1,0 +1,107 @@
+.banner_wrapper{
+    background-image: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
+    padding: 3rem;
+    width: 100%;
+    border-radius: 5rem;
+
+    .banner_title{
+        font-size: 5rem;
+        font-weight: 700;
+        color: #000;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .banner_subtitle{
+        font-size: 2rem;
+        font-weight: 400;
+        color: #000;
+        margin-bottom: 2rem;
+    }
+}
+
+
+.banner_img_wrapper{
+    position: relative;
+
+    overflow: hidden;
+    .banner_img_character{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30rem;
+        height: 100%;
+    
+
+        img{
+            width: 50%;
+            filter: drop-shadow(0 0 0.85rem rgb(50, 108, 35));
+        }
+
+        .banner_img_morty{
+            left: 0;
+            animation: morty 5s infinite linear;
+            animation-delay: 1s;
+
+            @keyframes morty{
+            
+                0%{
+                    transform: translateY(0);
+                }
+                50%{
+                    transform: translateY(-1rem);
+                }
+                100%{
+                    transform: translateY(0);
+                }
+
+            }
+        }
+
+        .banner_img_rick{
+            right: 0;
+            animation: rick 5s infinite linear;
+            animation-delay: 1s;
+
+            @keyframes rick{
+                0%{
+                    transform: translateY(0);
+                }
+                50%{
+                    transform: translateY(-4rem);
+                }
+                100%{
+                    transform: translateY(0);
+                }
+
+            }
+        }
+    }
+
+    .banner_img_portal{
+        top: 0;
+        left: 0;
+        width: 30rem;
+        filter: drop-shadow(0 0 0.75rem rgb(51, 240, 3));
+        animation: portal 5s infinite linear;
+        animation-delay: 1s;
+
+        @keyframes portal{
+            0%{
+                transform: rotate(0deg);
+            }
+            50%{
+                transform: rotate(180deg);
+            }
+
+            100%{
+                transform: rotate(360deg);
+            }
+
+
+           
+        }
+
+        
+    }
+
+}

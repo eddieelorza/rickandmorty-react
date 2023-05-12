@@ -12,6 +12,7 @@ function App() {
       <Route path="/detail" element={<CardDetail/>}>
         <Route path=":id" element={<CardDetail/>}/>
       </Route>
+      <Route path="*">404 Not Found</Route>
     </Routes>
   </main>
   )

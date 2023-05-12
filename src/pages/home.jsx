@@ -8,7 +8,7 @@ import Banner from '../components/banner/banner'
 
 const Home = ()=>{
 
-    const [character, setCharacter] = useState([])
+  const [character, setCharacter] = useState([])
   const [search, setSearch] = useState('')
 
 

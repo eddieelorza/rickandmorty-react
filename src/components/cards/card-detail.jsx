@@ -5,6 +5,7 @@ import {useEffect,useState} from "react"
 import CardSlide from "./card-slide"
 import Episodes from "./episodes"
 import './css/card-detail.scss'
+import {motion} from "framer-motion"
 
 const CardDetail = () =>{
     const {id} = useParams()
@@ -56,19 +57,41 @@ const CardDetail = () =>{
         <>
         {/* {status === alive ? <h2>El personaje esta vivo</h2> : <h2>El personaje esta muerto</h2>} */}
           <section className="card-detail_wrapper">
-            <section className="d-flex flex-column flex-lg-row justify-content-center align-items-center card-detail_box ">
+            <motion.section className="d-flex flex-column flex-lg-row justify-content-center align-items-center card-detail_box "
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 20
+              }}
+            >
                {alive === status ? 
-                <div className="avatar-wrapper">
+                <motion.div className="avatar-wrapper"
+                whileHover={{ scale: 1.2, rotate: 90 }}
+                whileTap={{
+                    scale: 0.8,
+                    rotate: -90,
+                    borderRadius: "100%"
+                }}>
                     <img src={image} alt="" className="avatar-wrapper_img alive-img"/>
                     <span className="avatar-wrapper_status alive-box">{status}</span>
                     
-                </div>
+                </motion.div>
                 :
-                <div className="avatar-wrapper">
+                <motion.div className="avatar-wrapper"
+                whileHover={{ scale: 1.2, rotate: 90 }}
+                whileTap={{
+                    scale: 0.8,
+                    rotate: -90,
+                    borderRadius: "100%"
+                }}
+        
+                >
                     <img src={image} alt="" className="avatar-wrapper_img dead-img"/>
                     <span className="avatar-wrapper_status dead-box">{status}</span>
 
-                </div>
+                </motion.div>
                 }
                 <div className="ms-5 mt-4">
                     <h1 className="text-sm-left">{name} Details</h1>
@@ -81,7 +104,7 @@ const CardDetail = () =>{
 
                 </div>
                 
-            </section>
+            </motion.section>
 
 
 

@@ -1,11 +1,20 @@
 import './css/card.scss';
 import {Link} from "react-router-dom"
+import {motion} from "framer-motion"
 
 const Card = ({name,status,species,location,origin,image,item}) =>{
     return(
         <>
-        <div className="col-12 col-lg-3 card-wrapper d-flex flex-row m-3 justify-content-center align-items-center" >
-            <div className="card-content">
+        <motion.div className="col-12 col-lg-3 card-wrapper d-flex flex-row m-3 justify-content-center align-items-center" 
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20
+        }}
+        >
+                <div className="card-content">
                     <div className="image-wrapper">
                        <img className="p-0 m-0 card-img-top" src={image}  alt="..."/>
                        <Link to={`/detail/${item.id}`}><p className="fw-bold link-title">{name.slice(0,15)}</p></Link>
@@ -24,9 +33,9 @@ const Card = ({name,status,species,location,origin,image,item}) =>{
                             <span>{origin.name}</span>
                         </span>
                     </div>   
-            </div>
+                    </div>
 
-        </div>
+             </motion.div>
         </>
     )
 }

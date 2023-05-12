@@ -40,7 +40,7 @@ const Home = ()=>{
     <section className="container d-flex flex-column justify-content-center align-items-center">
       <Banner/>
         {/* <h1 className="text-center fw-bold title my-2">Rick and Morty</h1> */}
-       <div className="input-group input-wrapper  rounded-2 align-items-center d-none d-lg-flex my-5" >
+       <div className="input-group input-wrapper  rounded-2 align-items-center d-lg-flex m-5" >
             <div className="input-group-append p-2">
                 <img src={searchIcon} alt=""/>
             </div>

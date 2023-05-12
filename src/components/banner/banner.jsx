@@ -6,8 +6,8 @@ import {motion} from "framer-motion"
 
 const Banner = () => {
     return(
-        <section className="banner_wrapper d-flex flex-row justify-content-between align-items-center">
-              <section>
+        <section className="banner_wrapper d-flex flex-column flex-lg-row justify-content-between align-items-center mb-5">
+              <section className="mb-5">
                     <h1 className="banner_title">Rick and Morty API</h1>
                     <p className="banner_subtitle">Search your favorite character</p>
                     <button className="btn btn-dark">API DOCS</button>

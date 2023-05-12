@@ -8,7 +8,6 @@ function App() {
   <main>
     <Navbar/>
     <Routes>  
-    {/* Al hacer click en cualquiera de ellos me debe redireccionar a un pagina de detalle , donde vea informacion relevante del personaje */}
       <Route path="/" element={<Home/>}/>
       <Route path="/detail" element={<CardDetail/>}>
         <Route path=":id" element={<CardDetail/>}/>
